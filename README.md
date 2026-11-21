@@ -43,7 +43,7 @@ Typowy przebieg dla kilku układów (np. kontrola i układ z dodatkiem badanego 
 Wymagany jest Python 3.9 lub nowszy.
 
 ```bash
-git clone https://github.com/<twoja-nazwa>/langmuir-isotherm-tools.git
+git clone https://github.com/HubertLapka/Langmuir-Isotherm-Tools
 cd langmuir-isotherm-tools
 python -m venv .venv
 # Windows:  .venv\Scripts\activate
