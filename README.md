@@ -15,10 +15,9 @@ Zestaw trzech narzędzi wiersza poleceń do obróbki izoterm ściskania **π–A
 4. [Szybki start na danych demonstracyjnych](#szybki-start-na-danych-demonstracyjnych)
 5. [Krok po kroku](#krok-po-kroku)
 6. [Metodyka obliczeń](#metodyka-obliczeń)
-7. [Ograniczenia i uwagi](#ograniczenia-i-uwagi)
-8. [Rozwiązywanie problemów](#rozwiązywanie-problemów)
-9. [Testy i struktura repozytorium](#testy-i-struktura-repozytorium)
-10. [Licencja](#licencja)
+7. [Rozwiązywanie problemów](#rozwiązywanie-problemów)
+8. [Testy i struktura repozytorium](#testy-i-struktura-repozytorium)
+9. [Licencja](#licencja)
 
 ## Pipeline
 
@@ -180,13 +179,6 @@ Dotyczą wyłącznie wyglądu wykresu, nie zmieniają danych zapisywanych do pli
 * **Odchylenie standardowe.** Liczone jako odchylenie z próby (`ddof = 1`). Dla jednej próby nie jest określone (puste pole w pliku).
 * **Powierzchnia przy zadanym ciśnieniu** A(π). Dla każdej próby punkty sortuje się według ciśnienia, uśrednia A dla powtarzających się wartości π i interpoluje liniowo. Jeśli próba nie osiągnęła zadanego ciśnienia, wynik ma wartość `n/a` (bez ekstrapolacji) i nie wchodzi do średniej.
 * **`pi_max`.** Maksymalne zarejestrowane ciśnienie w próbie, **nie** zawsze ciśnienie załamania (kolapsu) monowarstwy. Jego wartość trzeba zweryfikować na wykresie.
-
-## Ograniczenia i uwagi
-
-* Format plików KSV NIMA został założony na podstawie przykładowych plików (nagłówek `t[s]`, kolumny `Mma` i `P1`). Inne wersje programu mogą mieć inny układ, wtedy użyj `--area-column` / `--pressure-column` lub zgłoś issue z kilkoma pierwszymi wierszami pliku.
-* Dla zaszumionych, nierównomiernych danych interpolacja A(π) po sortowaniu według ciśnienia nie jest tym samym co pierwsze przekroczenie zadanego ciśnienia podczas kompresji. Przy wyraźnej histerezie lub szumie sprawdź wyniki na wykresie.
-* Odchylenie standardowe z 2 lub 3 prób jest tylko orientacyjne. Podawaj liczbę prób obok wyniku.
-* Nie publikuj w repozytorium niepublikowanych danych pomiarowych. Katalogi `data/` i `results/` są domyślnie ignorowane przez `.gitignore`.
 
 ## Rozwiązywanie problemów
 
