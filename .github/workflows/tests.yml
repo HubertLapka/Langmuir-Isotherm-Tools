@@ -1,3 +1,4 @@
+
 name: tests
 
 on:
@@ -6,16 +7,21 @@ on:
 
 jobs:
   pytest:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
+      fail-fast: false
       matrix:
         python-version: ["3.9", "3.11", "3.12"]
+
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
+
       - name: Install package
-        run: pip install -e ".[dev]"
+        run: python -m pip install -e ".[dev]"
+
       - name: Run tests
-        run: pytest
+        run: python -m pytest
