@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "langmuir-isotherm-tools"
+version = "0.1.0"
+description = "Tools for averaging, comparing and summarising Langmuir pi-A isotherms exported from KSV NIMA."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Hubert Łapka" }]
+keywords = ["Langmuir", "monolayer", "isotherm", "surface pressure", "KSV NIMA"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Chemistry",
+]
+dependencies = ["numpy>=1.22", "matplotlib>=3.5"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+isotherm-average = "langmuir_isotherms.average:main"
+isotherm-overlay = "langmuir_isotherms.overlay:main"
+isotherm-stats = "langmuir_isotherms.stats:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
